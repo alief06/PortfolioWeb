@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+/* ===============================
+   GLOBAL RESET + BASE
+================================ */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #0f172a; /* background OS gelap */
+  color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+/* ===============================
+   FLOATING ORBS
+================================ */
+@keyframes floatSlow {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-18px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+/* ===============================
+   SLOW ROTATION
+================================ */
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 18s linear infinite;
+}
+
+/* ===============================
+   ANIMATED BORDER GLOW
+================================ */
+@keyframes borderGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+.animated-border {
+  position: relative;
+  z-index: 0;
+}
+
+.animated-border::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    120deg,
+    #6366f1,
+    #22d3ee,
+    #a855f7,
+    #22c55e
+  );
+  background-size: 300% 300%;
+  animation: borderGlow 6s linear infinite;
+  z-index: -1;
+  opacity: 0.65;
+}
+
+/* ===============================
+   GLASS FEEL HELPER
+================================ */
+.glass {
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  background: rgba(15, 23, 42, 0.55);
+}
+
+/* ===============================
+   CURSOR GLOW UTIL
+================================ */
+.cursor-glow {
+  position: fixed;
+  pointer-events: none;
+  width: 18rem;
+  height: 18rem;
+  border-radius: 9999px;
+  filter: blur(90px);
+  opacity: 0.18;
+  z-index: 5;
+}
+
+/* ===============================
+   SOFT GRID BG (OPTIONAL)
+================================ */
+.bg-grid-soft {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.03) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.03) 1px,
+      transparent 1px
+    );
+  background-size: 60px 60px;
+}
+
+@keyframes windowIn {
+  0% {
+    opacity: 0;
+    transform: translateY(24px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-window-in {
+  animation: windowIn 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
