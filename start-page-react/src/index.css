@@ -1,31 +1,58 @@
 @import "tailwindcss";
 
 /* ===============================
-   GLOBAL RESET + BASE
+   GLOBAL RESET + FUTURISTIC BASE
 ================================ */
 html,
 body {
   margin: 0;
   padding: 0;
-  background: #0f172a; /* background OS gelap */
-  color: white;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
+  background: linear-gradient(
+    135deg,
+    #050507,
+    #0d0d12,
+    #14141c
+  );
+  color: #e5e7eb;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+    system-ui, "Segoe UI", sans-serif;
+  overflow-x: hidden;
+}
+
+/* ===============================
+   AI AMBIENT BACKGROUND OVERLAY
+================================ */
+@keyframes aiAmbientMove {
+  0% {
+    transform: translate(-15%, -15%) rotate(0deg);
+  }
+  50% {
+    transform: translate(15%, 15%) rotate(180deg);
+  }
+  100% {
+    transform: translate(-15%, -15%) rotate(360deg);
+  }
+}
+
+.ai-ambient {
+  position: fixed;
+  inset: -40%;
+  z-index: -3;
+  background: radial-gradient(circle at 30% 30%, rgba(0, 255, 255, 0.15), transparent 60%),
+              radial-gradient(circle at 70% 70%, rgba(139, 92, 246, 0.18), transparent 60%),
+              radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.05), transparent 70%);
+  animation: aiAmbientMove 40s linear infinite;
+  filter: blur(120px);
+  opacity: 0.6;
 }
 
 /* ===============================
    FLOATING ORBS
 ================================ */
 @keyframes floatSlow {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-18px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-18px); }
+  100% { transform: translateY(0px); }
 }
 
 .animate-float {
@@ -36,12 +63,8 @@ body {
    SLOW ROTATION
 ================================ */
 @keyframes spinSlow {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 .animate-spin-slow {
@@ -49,15 +72,11 @@ body {
 }
 
 /* ===============================
-   ANIMATED BORDER GLOW
+   FUTURISTIC BORDER GLOW
 ================================ */
 @keyframes borderGlow {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 200% 50%;
-  }
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
 }
 
 .animated-border {
@@ -72,28 +91,31 @@ body {
   border-radius: inherit;
   background: linear-gradient(
     120deg,
-    #6366f1,
-    #22d3ee,
-    #a855f7,
-    #22c55e
+    #00f0ff,
+    #8b5cf6,
+    #00f0ff
   );
   background-size: 300% 300%;
-  animation: borderGlow 6s linear infinite;
+  animation: borderGlow 8s linear infinite;
   z-index: -1;
-  opacity: 0.65;
+  opacity: 0.35;
 }
 
 /* ===============================
-   GLASS FEEL HELPER
+   APPLE FUTURISTIC GLASS
 ================================ */
 .glass {
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  background: rgba(20, 20, 28, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.6),
+    inset 0 0 40px rgba(255, 255, 255, 0.02);
 }
 
 /* ===============================
-   CURSOR GLOW UTIL
+   CURSOR NEON AURA
 ================================ */
 .cursor-glow {
   position: fixed;
@@ -101,27 +123,30 @@ body {
   width: 18rem;
   height: 18rem;
   border-radius: 9999px;
-  filter: blur(90px);
-  opacity: 0.18;
+  filter: blur(110px);
+  opacity: 0.15;
   z-index: 5;
+  background: radial-gradient(
+    circle,
+    rgba(0, 240, 255, 0.5),
+    rgba(139, 92, 246, 0.4),
+    transparent 70%
+  );
 }
 
 /* ===============================
-   SOFT GRID BG (OPTIONAL)
+   SOFT AI GRID
 ================================ */
 .bg-grid-soft {
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0.03) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      to right,
-      rgba(255, 255, 255, 0.03) 1px,
-      transparent 1px
-    );
-  background-size: 60px 60px;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 70px 70px;
 }
 
+/* ===============================
+   WINDOW ANIMATION
+================================ */
 @keyframes windowIn {
   0% {
     opacity: 0;
@@ -134,5 +159,28 @@ body {
 }
 
 .animate-window-in {
-  animation: windowIn 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  animation: windowIn 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ===============================
+   SUBTLE APPLE HOVER EFFECT
+================================ */
+.apple-hover {
+  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.apple-hover:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.7),
+    0 0 40px rgba(0, 255, 255, 0.08);
+}
+
+/* ===============================
+   AI TEXT GLOW (OPTIONAL)
+================================ */
+.ai-glow-text {
+  background: linear-gradient(90deg, #00f0ff, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

@@ -2,6 +2,22 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import WindowCard from "../components/WindowCard";
 
+import project1Img1 from "../assets/projects/project1/project1_1.png";
+import project1Img2 from "../assets/projects/project1/project1_2.png";
+
+import project2Img1 from "../assets/projects/project2/project2_1.jpeg";
+import project2Img2 from "../assets/projects/project2/project2_2.jpeg";
+import project2Img3 from "../assets/projects/project2/project2_3.jpeg";
+import project2Img4 from "../assets/projects/project2/project2_4.jpeg";
+import project2Img5 from "../assets/projects/project2/project2_5.jpeg";
+
+import project3Img1 from "../assets/projects/project3/project3_1.jpeg";
+import project3Img2 from "../assets/projects/project3/project3_2.jpeg";
+import project3Img3 from "../assets/projects/project3/project3_3.jpeg";
+
+import project4Img1 from "../assets/projects/project4/project4_1.jpeg";
+import project4Img2 from "../assets/projects/project4/project4_2.jpeg";
+
 export default function Projects() {
   const navigate = useNavigate();
   const [activeProject, setActiveProject] = useState(null);
@@ -13,82 +29,50 @@ export default function Projects() {
 
   const projects = [
     {
-      id: "portfolio-os",
-      title: "Portfolio OS UI",
-      images: [
-        "https://picsum.photos/600/400?random=11",
-        "https://picsum.photos/600/400?random=12",
-      ],
+      id: "web-cv-v1",
+      title: "Project Web CV V1",
+      images: [project1Img1, project1Img2],
       description:
-        "Portfolio dengan konsep desktop OS, di mana setiap halaman direpresentasikan sebagai window interaktif untuk meningkatkan pengalaman pengguna.",
-      tech: ["React", "Tailwind", "React Router"],
+        "Website CV versi pertama yang dibuat menggunakan HTML dan CSS dengan tampilan sederhana, responsive, dan fokus pada struktur layout yang rapi.",
+      tech: ["HTML", "CSS"],
     },
     {
-      id: "si-akademik",
-      title: "Sistem Informasi Akademik",
+      id: "alertime",
+      title: "ALERTIME - Aplikasi Mobile Pengingat Tugas",
       images: [
-        "https://picsum.photos/600/400?random=21",
-        "https://picsum.photos/600/400?random=22",
+        project2Img1,
+        project2Img2,
+        project2Img3,
+        project2Img4,
+        project2Img5,
       ],
       description:
-        "Aplikasi pengelolaan data akademik mahasiswa, dosen, mata kuliah, KRS, dan KHS secara terintegrasi.",
-      tech: ["PHP", "MySQL"],
+        "Aplikasi mobile pengingat tugas untuk membantu mahasiswa mencatat, mengelola, dan memonitor deadline secara efisien dan terstruktur.",
+      tech: ["Flutter", "Firebase"],
     },
     {
-      id: "pos-umkm",
-      title: "POS UMKM",
+      id: "gateva",
+      title: "GATEVA - Web App Pemesanan Tiket Online",
       images: [
-        "https://picsum.photos/600/400?random=31",
-        "https://picsum.photos/600/400?random=32",
+        project3Img1,
+        project3Img2,
+        project3Img3,
       ],
       description:
-        "Sistem kasir sederhana untuk UMKM dengan fitur transaksi, stok barang, dan laporan penjualan.",
-      tech: ["Laravel", "Tailwind"],
+        "GATEVA merupakan web application pemesanan tiket online yang dikembangkan sebagai tugas akhir (kelompok) pada mata kuliah Teknologi Web. Aplikasi ini dibuat menggunakan React dengan fitur pemilihan jadwal, pemesanan tiket, serta antarmuka modern berbasis component.",
+      tech: ["React", "React Router", "Tailwind CSS"],
     },
     {
-      id: "helpdesk",
-      title: "IT Helpdesk",
-      images: [
-        "https://picsum.photos/600/400?random=41",
-        "https://picsum.photos/600/400?random=42",
-      ],
-      description:
-        "Aplikasi ticketing untuk mencatat dan memantau penyelesaian masalah IT secara terstruktur.",
-      tech: ["React", "Express"],
-    },
-    {
-      id: "dashboard",
-      title: "Business Intelligence Dashboard",
-      images: [
-        "https://picsum.photos/600/400?random=51",
-        "https://picsum.photos/600/400?random=52",
-      ],
-      description:
-        "Dashboard visualisasi data untuk membantu pengambilan keputusan berbasis data.",
-      tech: ["React", "Chart.js"],
-    },
-    {
-      id: "elearning",
-      title: "E-Learning Platform",
-      images: [
-        "https://picsum.photos/600/400?random=61",
-        "https://picsum.photos/600/400?random=62",
-      ],
-      description:
-        "Platform pembelajaran online dengan manajemen kelas, materi, tugas, dan evaluasi.",
-      tech: ["Next.js", "Firebase"],
-    },
-    {
-      id: "inventory",
-      title: "Inventory Management System",
-      images: [
-        "https://picsum.photos/600/400?random=71",
-        "https://picsum.photos/600/400?random=72",
-      ],
-      description:
-        "Sistem inventaris untuk pencatatan barang masuk, keluar, dan monitoring stok.",
-      tech: ["Vue", "MySQL"],
-    },
+  id: "gemastik-ux",
+  title: "UX Design Concept - GEMASTIK 2025",
+  images: [
+    project4Img1,
+    project4Img2,
+  ],
+  description:
+    "Konsep UX Design yang dikembangkan sebagai bagian dari persiapan kompetisi GEMASTIK 2025. Dalam proyek ini saya berperan sebagai perancang ide dan alur pengalaman pengguna dengan fokus pada identifikasi kebutuhan pengguna, perancangan user flow, serta penyusunan konsep fitur utama. Desain antarmuka divisualisasikan menggunakan Figma untuk menggambarkan struktur dan interaksi aplikasi secara konseptual.",
+  tech: ["UX Research", "User Flow", "Design Thinking", "Figma"],
+},
   ];
 
   return (
@@ -96,7 +80,7 @@ export default function Projects() {
       {/* GRID BACKGROUND */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:40px_40px]" />
 
-      {/* MAIN PROJECT WINDOW */}
+      {/* MAIN WINDOW */}
       <div
         className={`relative transition-all duration-300 ${
           maximized ? "fixed inset-6 z-50" : ""
@@ -108,34 +92,28 @@ export default function Projects() {
           defaultPos={{ x: 70, y: 70 }}
           width={900}
         >
-          {/* WINDOW CONTROLS */}
           <div className="flex items-center gap-2 mb-4">
             <button
               onClick={goHome}
               className="w-3 h-3 rounded-full bg-red-500 hover:scale-110 transition"
-              title="Close"
             />
             <button
               onClick={goHome}
               className="w-3 h-3 rounded-full bg-yellow-400 hover:scale-110 transition"
-              title="Minimize"
             />
             <button
               onClick={() => setMaximized(!maximized)}
               className="w-3 h-3 rounded-full bg-green-500 hover:scale-110 transition"
-              title="Maximize"
             />
           </div>
 
-          {/* PROJECT LIST */}
           <div className="max-h-[420px] overflow-y-auto pr-2">
             <div className="grid md:grid-cols-2 gap-4">
               {projects.map((p) => (
                 <button
                   key={p.id}
                   onClick={() => setActiveProject(p)}
-                  className="text-left rounded-xl border border-white/10 bg-white/5 p-4
-                             hover:bg-white/10 hover:-translate-y-1 transition"
+                  className="text-left rounded-xl border border-white/10 bg-white/5 p-4 hover:bg-white/10 hover:-translate-y-1 transition"
                 >
                   <h3 className="font-semibold mb-1 text-white">
                     {p.title}
@@ -150,7 +128,7 @@ export default function Projects() {
         </WindowCard>
       </div>
 
-      {/* PROJECT DETAIL WINDOW */}
+      {/* DETAIL WINDOW */}
       {activeProject && (
         <WindowCard
           title={activeProject.title}
@@ -158,41 +136,34 @@ export default function Projects() {
           defaultPos={{ x: 140, y: 110 }}
           width={760}
         >
-          {/* DETAIL WINDOW CONTROLS */}
           <div className="flex items-center gap-2 mb-4">
             <button
               onClick={() => setActiveProject(null)}
               className="w-3 h-3 rounded-full bg-red-500 hover:scale-110 transition"
-              title="Close"
             />
             <button
               onClick={() => setActiveProject(null)}
               className="w-3 h-3 rounded-full bg-yellow-400 hover:scale-110 transition"
-              title="Minimize"
             />
             <span className="w-3 h-3 rounded-full bg-green-500 opacity-40" />
           </div>
 
-          {/* DETAIL CONTENT */}
           <div className="max-h-[460px] overflow-y-auto pr-2 space-y-4">
-            {/* IMAGES */}
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
               {activeProject.images.map((img, i) => (
                 <img
                   key={i}
                   src={img}
-                  alt=""
+                  alt={`project-${i}`}
                   className="rounded-lg border border-black/30 object-cover hover:scale-105 transition"
                 />
               ))}
             </div>
 
-            {/* DESCRIPTION */}
             <p className="text-sm text-slate-300 leading-relaxed">
               {activeProject.description}
             </p>
 
-            {/* TECH STACK */}
             <div className="flex flex-wrap gap-2 text-xs">
               {activeProject.tech.map((t) => (
                 <span
