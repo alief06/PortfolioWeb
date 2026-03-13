@@ -29,6 +29,14 @@ export default function Projects() {
 
   const projects = [
     {
+      id: "portfolio-v2",
+      title: "Portfolio OS Enhancement (2026)",
+      images: [], // I'll add an SVG or icon later if needed, but for now I'll use text
+      description:
+        "Pembaruan besar pada portfolio ini untuk meningkatkan pengalaman pengguna dan estetika. Mencakup implementasi: \n\n1. Dynamic Glassmorphism UI\n2. Responsive Layout (Mobile, Tablet, Desktop)\n3. Interactive Component (Orbit Animation & Tooltips)\n4. Framer Motion Entry Animations\n5. Animated Gradient Background\n6. System Status Live Dashboard UI",
+      tech: ["React", "Tailwind CSS", "Framer Motion", "Glassmorphism"],
+    },
+    {
       id: "web-cv-v1",
       title: "Project Web CV V1",
       images: [project1Img1, project1Img2],
@@ -63,16 +71,16 @@ export default function Projects() {
       tech: ["React", "React Router", "Tailwind CSS"],
     },
     {
-  id: "gemastik-ux",
-  title: "UX Design Concept - GEMASTIK 2025",
-  images: [
-    project4Img1,
-    project4Img2,
-  ],
-  description:
-    "Konsep UX Design yang dikembangkan sebagai bagian dari persiapan kompetisi GEMASTIK 2025. Dalam proyek ini saya berperan sebagai perancang ide dan alur pengalaman pengguna dengan fokus pada identifikasi kebutuhan pengguna, perancangan user flow, serta penyusunan konsep fitur utama. Desain antarmuka divisualisasikan menggunakan Figma untuk menggambarkan struktur dan interaksi aplikasi secara konseptual.",
-  tech: ["UX Research", "User Flow", "Design Thinking", "Figma"],
-},
+      id: "gemastik-ux",
+      title: "UX Design Concept - GEMASTIK 2025",
+      images: [
+        project4Img1,
+        project4Img2,
+      ],
+      description:
+        "Konsep UX Design yang dikembangkan sebagai bagian dari persiapan kompetisi GEMASTIK 2025. Dalam proyek ini saya berperan sebagai perancang ide dan alur pengalaman pengguna dengan fokus pada identifikasi kebutuhan pengguna, perancangan user flow, serta penyusunan konsep fitur utama. Desain antarmuka divisualisasikan menggunakan Figma untuk menggambarkan struktur dan interaksi aplikasi secara konseptual.",
+      tech: ["UX Research", "User Flow", "Design Thinking", "Figma"],
+    },
   ];
 
   return (
@@ -82,9 +90,8 @@ export default function Projects() {
 
       {/* MAIN WINDOW */}
       <div
-        className={`relative transition-all duration-300 ${
-          maximized ? "fixed inset-6 z-50" : ""
-        }`}
+        className={`relative transition-all duration-300 ${maximized ? "fixed inset-6 z-50" : ""
+          }`}
       >
         <WindowCard
           title="PROJECTS"
@@ -160,7 +167,7 @@ export default function Projects() {
               ))}
             </div>
 
-            <p className="text-sm text-slate-300 leading-relaxed">
+            <p className="text-sm text-slate-300 leading-relaxed whitespace-pre-wrap">
               {activeProject.description}
             </p>
 

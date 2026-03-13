@@ -2,28 +2,27 @@ export default function SystemStatus() {
   return (
     <div
       className="
-        relative w-[280px] h-[180px]
-        rounded-2xl
-        backdrop-blur-xl
-        bg-white/10
-        border border-white/20
-        shadow-[0_0_30px_rgba(99,102,241,0.25)]
-        p-4
+        relative w-[280px] min-h-[180px]
+        glass glass-hover
+        p-5 z-10
       "
     >
-      {/* soft glow */}
-      <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-indigo-500/20 to-cyan-400/10 blur-xl" />
-
       <div className="relative z-10">
-        <p className="text-xs tracking-widest opacity-70 mb-3">
-          SYSTEM STATUS
-        </p>
+        <div className="flex items-center justify-between mb-4">
+          <p className="text-[10px] font-bold tracking-[0.2em] text-indigo-400 uppercase">
+            System OS v2.0
+          </p>
+          <div className="flex gap-1">
+            <div className="w-1.5 h-1.5 rounded-full bg-indigo-500/50" />
+            <div className="w-1.5 h-1.5 rounded-full bg-indigo-500/30" />
+          </div>
+        </div>
 
-        <div className="space-y-2 text-xs">
+        <div className="space-y-3">
           <StatusRow label="Status" value="Active" active />
-          <StatusRow label="Focus" value="Frontend & UI/UX" />
-          <StatusRow label="Learning" value="React + Tailwind" />
-          <StatusRow label="Availability" value="Open for Project" />
+          <StatusRow label="Core" value="Frontend Tech" />
+          <StatusRow label="Stack" value="React / Tailwind" />
+          <StatusRow label="Uptime" value="100% Available" />
         </div>
       </div>
     </div>
@@ -32,17 +31,19 @@ export default function SystemStatus() {
 
 function StatusRow({ label, value, active }) {
   return (
-    <div className="flex justify-between items-center">
-      <span className="opacity-70">{label}</span>
-      <span className="flex items-center gap-2">
+    <div className="flex justify-between items-center group">
+      <span className="text-[11px] text-white/50 font-medium">{label}</span>
+      <div className="flex items-center gap-2">
         {active && (
-          <span className="relative flex h-2 w-2">
+          <div className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-green-400"></span>
-          </span>
+          </div>
         )}
-        <span className="font-medium">{value}</span>
-      </span>
+        <span className={`text-[11px] font-mono ${active ? 'text-green-400' : 'text-white/90'}`}>
+          {value}
+        </span>
+      </div>
     </div>
   );
 }

@@ -79,7 +79,7 @@ export default function About() {
 
               <p>
                 <span className="opacity-70">Nama:</span>{" "}
-                M. Anang Alief
+                M. Anang Alief Al Ikhsan Setiawan
               </p>
 
               <p>
@@ -99,7 +99,7 @@ export default function About() {
 
               <p>
                 <span className="opacity-70">Pengalaman:</span>{" "}
-                10+ mini project akademik & personal
+                Mini project akademik & personal
               </p>
 
               <p className="pt-2 opacity-80">
